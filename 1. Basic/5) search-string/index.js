@@ -1,5 +1,13 @@
 function searchString(obj) {
-  // Напиши свой код здесь
+  let str = '?';
+  for (let key in obj) {
+    if (obj[key] == null || obj[key] == undefined) {
+      continue;
+    } else {
+      str = str + (key + '=' + obj[key] + '&');
+    }
+  }
+  return str.slice(0, str.length - 2);
 }
 
 window.searchString = searchString;
