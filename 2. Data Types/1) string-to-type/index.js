@@ -8,12 +8,15 @@ function stringToType(str) {
       return true;
     case 'false':
       return false;
+    case '': 
+      return '';
     default: 
-      if ( typeof(+str) === 'number') {
-        return +str;
-      } 
-      return str;
+      if (isNaN(+str)) {
+        return str;
+      } else if (typeof(+str) === 'number')
+      return +str;
     }
+    return str
 };
 
 window.stringToType = stringToType;
