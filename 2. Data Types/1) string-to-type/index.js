@@ -1,17 +1,19 @@
 function stringToType(str) {
-  if (str == 'null') {
-    return null;
-  } else if (str == 'undefined') {
-    return undefined;
-  } else if (str == 'true') {
-    return true;
-  } else if (str == 'false') {
-    return false;
-  } else if ( typeof(+str) == 'number') {
-    return +str;
-  } else {
-    return str;
-  }
+  switch(str) {
+    case 'null': 
+      return null;
+    case 'undefined':
+      return undefined;
+    case 'true':
+      return true;
+    case 'false':
+      return false;
+    default: 
+      if ( typeof(+str) === 'number') {
+        return +str;
+      } 
+      return str;
+    }
 };
 
 window.stringToType = stringToType;
