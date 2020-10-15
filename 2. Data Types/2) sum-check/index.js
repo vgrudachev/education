@@ -1,6 +1,6 @@
 function sumCheck(a, b) {
   try {
-    if (typeof +a === 'number' && typeof +b === 'number' && !isNaN(a) && !isNaN(b)) {
+    if (!isNaN(a) && !isNaN(b)) {
       return +a + +b;
     }
     throw new Error("Wrong arguments type!");
