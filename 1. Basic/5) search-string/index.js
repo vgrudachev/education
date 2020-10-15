@@ -1,9 +1,7 @@
 function searchString(obj) {
   let str = '?';
-  for (let key in obj) {
-    if (obj[key] == null || obj[key] == undefined) {
-      continue;
-    } else {
+  for (let key in obj) {    
+    if (obj[key] != null && obj[key] != undefined && obj[key] != '') {
       str = str + (key + '=' + obj[key] + '&');
     }
   }
