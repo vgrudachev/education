@@ -8,10 +8,8 @@ function isEqual(a, b) {
   let arrLength = aKeys.length;
   let rightNum = 0;
 
-  if (aKeys.length !== bKeys.length) {
-    return false;
-  }
-
+  if (aKeys.length !== bKeys.length) return false;
+  
   for (let i = 0; i <= arrLength - 1; i++) {
     if (aKeys[i] === bKeys[i] && aValues[i] === bValues[i])
     rightNum++;
