@@ -1,15 +1,19 @@
 function sumCheck(a, b) {
+  if (!isNaN(+a) && !isNaN(+b) && typeof a == 'number' && typeof b == 'number') {
+  return a + b;
+  }
   try {
-    if (!isNaN(a) && !isNaN(b)) {
-      return +a + +b;
+    if ( (isNaN(+a) || isNaN(+b)) && typeof a != 'object' && typeof b != 'object') {
+      return NaN;
     }
     throw new Error("Wrong arguments type!");
   } catch(e) {
-    alert(e.message);
+    if (e.name == 'Error') {
+      alert(e.message);
+    }
+    throw e;
   }
 }
-
-sumCheck(2, 'b')
 
 window.sumCheck = sumCheck;
 
