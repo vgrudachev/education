@@ -1,48 +1,25 @@
 function isEqual(a, b) {
-  if ( a == null || b == null ) {
-    return false;
-  }
+  if (a === null || b === null) return false;
 
-  let keysa = Object.keys(a);
-  let keysb = Object.keys(b);
-  let length = 0;
-
-  let vala = Object.values(a);
-  let valb = Object.values(b);
-
+  let aKeys = Object.keys(a);
+  let bKeys = Object.keys(b);
+  let aValues = Object.values(a);
+  let bValues = Object.values(b);
+  let arrLength = 0;
   let rightNum = 0;
 
-  if (keysa.length > keysb.length || keysa.length < keysb.length) {
+  if (aKeys.length !== bKeys.length) {
     return false;
-  } else {
-    length = keysa.length;
-  }
-
-  for (let i = 0; i <= length - 1; i++) {
-    if (keysa[i] === keysb[i] && vala[i] === valb[i]) {
-      rightNum++;
-    }
-    continue;
   } 
+  arrLength = aKeys.length;
 
-  if (rightNum == length) {
-    return true;
-  } else {
-    return false;
-  }
+  for (let i = 0; i <= arrLength - 1; i++) {
+    if (aKeys[i] === bKeys[i] && aValues[i] === bValues[i])
+    rightNum++;
+  };
+  
+  return rightNum === arrLength;
 };
-
-let aa = {
-  name: 'john',
-  lastname: 'smith',
-};
-
-let bb = {
-  name: 'john',
-  lastname: 'smith',
-};
-
-
 
 window.isEqual = isEqual;
 
