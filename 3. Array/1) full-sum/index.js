@@ -1,11 +1,11 @@
 function fullSum(...args) {
-  for (let i = 0; i < arguments.length; i++) {
-    if (typeof arguments[i] !== 'number') throw new Error("Wrong Argument Type");
+  for (let i = 0; i < args.length; i++) {
+    if (typeof args[i] !== 'number') throw new Error("Wrong Argument Type");
   };
 
   let arr = [];
-  for (let i = 0; i < arguments.length; i++) {
-  arr[i] = arguments[i];
+  for (let i = 0; i < args.length; i++) {
+  arr[i] = args[i];
   }
 
   let result = arr.reduce(function(sum, current) {
