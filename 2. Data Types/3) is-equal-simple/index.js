@@ -5,13 +5,12 @@ function isEqual(a, b) {
   let bKeys = Object.keys(b);
   let aValues = Object.values(a);
   let bValues = Object.values(b);
-  let arrLength = 0;
+  let arrLength = aKeys.length;
   let rightNum = 0;
 
   if (aKeys.length !== bKeys.length) {
     return false;
-  } 
-  arrLength = aKeys.length;
+  }
 
   for (let i = 0; i <= arrLength - 1; i++) {
     if (aKeys[i] === bKeys[i] && aValues[i] === bValues[i])
